@@ -9,7 +9,7 @@ build()
 dockerfile()
 {
     cat << "EOF"
-ARG IMAGE=registry.opensuse.org/home/kwk/elemental/images/opensuse_leap_15.3/rancher/ros-node-image-opensuse/15.3
+ARG IMAGE=ghcr.io/rancher-sandbox/ros-update-image:latest
 
 FROM ${IMAGE} AS os
 
