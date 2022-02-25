@@ -1,8 +1,8 @@
-name: CI to GHCR 
+name: Build and push to GHCR
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
