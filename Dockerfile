@@ -10,6 +10,9 @@ RUN ["luet", \
 
 # Starting from here are the lines needed for RancherOS to work
 
+# Make this build unique for ros-updater
+RUN echo "TIMESTAMP="`date +"\"%Y%m%d%H%M%S\""` >> /etc/os-release
+
 # Rebuild initrd to setup dracut with the boot configurations
 RUN mkinitrd && \
     # aarch64 has an uncompressed kernel so we need to link it to vmlinuz
