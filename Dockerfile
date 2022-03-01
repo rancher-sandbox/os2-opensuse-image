@@ -4,9 +4,11 @@ FROM registry.opensuse.org/home/kwk/elemental/images/opensuse_leap_15.3/rancher/
 ARG CACHEBUST
 ENV LUET_NOLOCK=true
 
+RUN mv /usr/bin/elemental /usr/bin/elemental.orig
 RUN ["luet", \
     "install", "--no-spinner", "-d", "-y", \
     "meta/cos-modules"]
+RUN mv /usr/bin/elemental.orig /usr/bin/elemental
 
 # Starting from here are the lines needed for RancherOS to work
 
